@@ -1,0 +1,64 @@
+
+    <!--  <div class="section">
+      <div class="container">
+        <h3> PNR Details </h3>
+        <ul class="list-group">
+        	<li class="list-group-item">PNR Number : {{trains.pnr}}</li>
+        	<li class="list-group-item">Journey Date : 20-02-2019</li>
+        	<li class="list-group-item">Train Number : {{trains.id}}</li>
+        	<li class="list-group-item">Train Name : {{trains.trains_name}}</li>
+        	<li class="list-group-item">Source Station : {{trains.station_from}}</li>
+        	<li class="list-group-item">Destination Station : {{trains.station_to}}</li>
+        	<li class="list-group-item">COach / Seat Number : {{trains.coach_seat}}</li>
+        </ul>
+      </div>
+  </div>-->
+ 
+  <div class="wrapper">
+    <div class="page-header clear-filter" filter-color="orange">
+      <div class="page-header-image" data-parallax="true" style="background-image:url('../assets/img/bg5.jpg');">
+      </div>
+      <div class="container">
+        <div class="photo-container">
+          <img src="../assets/img/ryan.jpg" alt="">
+        </div>
+        <h3 class="title">{{user.name}}</h3>
+        <div class="card-body">
+          <div class="input-group no-border input-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="now-ui-icons users_circle-08"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control" ng-model="pnr" placeholder="Enter PNR No.">
+          </div>
+        </div>
+        
+        <div class='action'>
+       		<button class="btn btn-primary btn-round btn-lg go-btnn" ng-click="fetch_pnr()">Go</button>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="pnr-info">
+      <div class="container">
+        <h3>PNR Details</h3>
+        <ul class="list-group" ng-repeat="t in trains">
+        	<li class="list-group-item">PNR Number : {{t.pnr}}</li>
+        	<li class="list-group-item">Journey Date : {{t.date}}</li>
+        	<li class="list-group-item">Train Number : {{t.id}}</li>
+        	<li class="list-group-item">Train Name : {{t.train_name}}</li>
+        	<li class="list-group-item">Source Station : {{t.station_from}}</li>
+        	<li class="list-group-item">Destination Station : {{t.station_to}}</li>
+        	<li class="list-group-item">COach / Seat Number : {{t.coach_seat}}</li>
+        </ul>
+      </div>
+      <div class="container">
+        <h3> Current Train Halts </h3>
+        <ul class="list-group" ng-repeat="t in trains">
+        	<li class="list-group-item" ng-repeat="s in t.station"><button class="btn btn-primary signup" ng-click="fetch_items(s)">Station Name : {{s.name}}</button></li>
+        	<hr>
+        </ul>
+      </div>
+  </div>
+  </div>   
+    

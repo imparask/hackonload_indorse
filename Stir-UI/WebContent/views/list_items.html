@@ -1,0 +1,18 @@
+<div class="section" id="pnr-info">
+      <div class="container">
+        <div class ="row">
+        	<div class="col">
+        	<h3>Station Name : {{station.name}} </h3>
+        	</div>
+        	<div class="col">
+        	<h5 align = "right"><button class="btn btn-primary" ng-click="showCart()">Your Cart({{cart}})</button></h5>
+        	</div>
+        </div>
+        <ul class="list-group" ng-repeat="i in items">
+        	<li class="list-group-item">Item Name : {{i.name}}</li>
+        	<li class="list-group-item">Item Price : {{i.price}}</li>
+        	<li class="list-group-item">Vendor/s : Ram Traders , Kumar Catering</li>
+        	<li class="list-group-item"><button class="btn btn-primary btn-round btn-lg go-btnn" ng-click="addToCart(i)">ADD TO CART</button></li>
+        </ul>
+      </div>
+  </div>
